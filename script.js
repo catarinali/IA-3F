@@ -8,64 +8,70 @@ const perguntas = [//serve para abrir lista de perguntas
         enunciado: "Você usa ou já usou algum tipo de Inteligência Artificial?",
             alternativas:[
                 {texto:"Sim",
-                    afirmação:"Afirmação da alternativa"},
+                    afirmação:"Você usa ou já usou algum tipo de Inteligência Artificial"},
 
                 {texto:"Não",
-                    afirmação:"Afirmação da alternativa"}]
+                    afirmação:"Você nunca usou algum tipo de Inteligência Artificial"}]
                 },
-        {//abre o objeto das perguntas
-            enunciado: "Você acha que ela é, no minímo, relativamente boa?",
+        {//abre o objeto das perguntaso
+            enunciado: "Você acha que o funcionamento dela é, no minímo, relativamente boa?",
             alternativas:[
                 {texto:"Sim",
-                    afirmação:"Afirmação da alternativa"},
+                    afirmação:"Você acha que o funcionamento dela é, no minímo, relativamente boa"},
 
                 {texto:"Não",
-                    afirmação:"Afirmação da alternativa"}]
+                    afirmação:"Você acha que o funcionamento dela é ruim"}]
                 },
     {//abre o objeto das perguntas
-        enunciado: "Você acha que que estamos ficando mais burros e dependentes da tecnologia por influência dela?",
+        enunciado: "Você acha que estamos ficando mais burros e dependentes da tecnologia por influência da IA?",
         alternativas:[
             {texto:"Sim",
-                afirmação:"Afirmação da alternativa"},
+                afirmação:"Você acha que estamos ficando mais burros e dependentes da tecnologia por influência da IA"},
 
             {texto:"Não",
-                afirmação:"Afirmação da alternativa"}]
+                afirmação:"Você não acha que estamos ficando mais burros e dependentes da tecnologia por influência da IA"}]
             },
     {//abre o objeto das perguntas
         enunciado: "Você acha que ela causará algum impacto efetivo no futuro?",
         alternativas:[
             {texto:"Sim",
-                afirmação:"Afirmação da alternativa"},
+                afirmação:"Você acha que ela causará algum impacto efetivo no futuro"},
 
             {texto:"Não",
-                afirmação:"Afirmação da alternativa"}]
+                afirmação:"Você acha que ela não causará algum impacto efetivo no futuro"}]
             },
     {//abre o objeto das perguntas
-        enunciado: "Você dixaria uma Inteligência Artificial decidir questões muito bem respondidas, com base científica e social, por você?",
+        enunciado: "Você deixaria uma Inteligência Artificial decidir questões muito bem respondidas, com base científica e social, por você?",
         alternativas:[
             {texto:"Sim",
-                afirmação:"Afirmação da alternativa"},
+                afirmação:"Você deixaria uma Inteligência Artificial decidir questões muito bem respondidas, com base científica e social, por você"},
 
             {texto:"Não",
-                afirmação:"Afirmação da alternativa"}]
+                afirmação:"Você não deixaria uma Inteligência Artificial decidir questões muito bem respondidas, com base científica e social, por você"}]
             },
     {//abre o objeto das perguntas
         enunciado: "Você acha que ela vai dominar o mundo?",
         alternativas:[
             {texto:"Sim",
-                afirmação:"Afirmação da alternativa"},
+                afirmação:"Você acha que ela vai dominar o mundo"},
 
             {texto:"Não",
-                afirmação:"Afirmação da alternativa"}]
+                afirmação:"Você acha que ela não vai dominar o mundo"}]
             },
 ]
 
 let posicao = 0;
 let perguntaAtual;
+let historiaFinal = "";
 
 function mostraPergunta(){
+    if (posicao >= perguntas.length){
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[posicao];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = " ";
     mostraAlternativas();
 }
 function mostraAlternativas(){
@@ -79,9 +85,14 @@ function mostraAlternativas(){
 
 function respostaSelecionada(opcaoSelecionada){
     const afirmacoes = opcaoSelecionada.afirmação;
-    historiaFinal = afirmacoes;
+    historiaFinal += afirmacoes + " ";
     posicao++;
     mostraPergunta();
+}
+function mostraResultado(){
+    caixaPerguntas.textContent = "Portanto...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = " ";
 }
 
 mostraPergunta();
