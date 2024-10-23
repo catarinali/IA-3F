@@ -2,43 +2,44 @@ const caixaPrincipal = document.querySelector('.caixa-principal');
 const caixaPerguntas = document.querySelector('.caixa-perguntas');
 const caixaAlternativas = document.querySelector('.caixa-alternativas');
 const caixaResultado = document.querySelector('.caixa-resultado');
+const textoResultado = document.querySelector('.texto-resultado');
 
 const perguntas = [//serve para abrir lista de perguntas
     {//abre o objeto das perguntas
-        enunciado: "Você usa ou já usou algum tipo de Inteligência Artificial?",
+        enunciado: "Você gosta de comer churrasco?",
             alternativas:[
                 {texto:"Sim",
-                    afirmação:"Você usa ou já usou algum tipo de Inteligência Artificial"},
+                    afirmação:"Churrasco;"},
 
                 {texto:"Não",
-                    afirmação:"Você nunca usou algum tipo de Inteligência Artificial"}]
+                    afirmação:""}]
                 },
         {//abre o objeto das perguntaso
-            enunciado: "Você acha que o funcionamento dela é, no minímo, relativamente boa?",
+            enunciado: "Você gosta de comer plástico?",
             alternativas:[
                 {texto:"Sim",
-                    afirmação:"Você acha que o funcionamento dela é, no minímo, relativamente boa"},
+                    afirmação:"Plástico;"},
 
                 {texto:"Não",
-                    afirmação:"Você acha que o funcionamento dela é ruim"}]
+                    afirmação:""}]
                 },
     {//abre o objeto das perguntas
-        enunciado: "Você acha que estamos ficando mais burros e dependentes da tecnologia por influência da IA?",
+        enunciado: "Você gosta de comer farofa?",
         alternativas:[
             {texto:"Sim",
-                afirmação:"Você acha que estamos ficando mais burros e dependentes da tecnologia por influência da IA"},
+                afirmação:"Farofa;"},
 
             {texto:"Não",
-                afirmação:"Você não acha que estamos ficando mais burros e dependentes da tecnologia por influência da IA"}]
+                afirmação:""}]
             },
     {//abre o objeto das perguntas
-        enunciado: "Você acha que ela causará algum impacto efetivo no futuro?",
+        enunciado: "Você gosta de comer chocolate?",
         alternativas:[
             {texto:"Sim",
-                afirmação:"Você acha que ela causará algum impacto efetivo no futuro"},
+                afirmação:"Chocolate;"},
 
             {texto:"Não",
-                afirmação:"Você acha que ela não causará algum impacto efetivo no futuro"}]
+                afirmação:""}]
             },
     {//abre o objeto das perguntas
         enunciado: "Você deixaria uma Inteligência Artificial decidir questões muito bem respondidas, com base científica e social, por você?",
